@@ -10,6 +10,7 @@ export function compile() {
   return gulp
     .src(paths.src)
     .pipe(sass().on("error", sass.logError))
+    .pipe(cleancss())
     .pipe(gulp.dest(paths.dest));
 }
 
