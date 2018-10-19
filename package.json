@@ -1,0 +1,14 @@
+{
+  "name": "foxing-edm",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:xavianaxw/foxing-edm.git",
+  "author": "Xavian Ang <xavianaxw@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/register": "^7.0.0",
+    "gulp": "^4.0.0"
+  }
+}
