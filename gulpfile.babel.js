@@ -1,7 +1,6 @@
 import gulp, { series } from "gulp";
 
-gulp.task("hello", (done) => {
-  done();
-});
+// Tasks
+import { styles } from "./tasks/styles";
 
-export default series("hello");
+export default series(styles);
