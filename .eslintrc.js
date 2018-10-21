@@ -25,6 +25,8 @@ module.exports = {
   },
   "globals": {
     "window": true,
-    "document": true
+    "document": true,
+    "PATHS": true,
+    "TASKS": true,
   }
 };
