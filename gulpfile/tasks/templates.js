@@ -3,12 +3,11 @@ import inliner from "gulp-inline-css";
 import twig from "gulp-twig";
 import data from "gulp-data";
 
-import paths from "../config/paths";
 import pathBuilder from "../lib/path-builder";
 
 export function compile() {
   return gulp
-    .src(pathBuilder(paths.src, paths.templates.src, "**/*.twig"))
+    .src(pathBuilder(PATHS.src, PATHS.templates.src, "**/*.twig"))
     .pipe(
       data(() => {
         return {
@@ -17,12 +16,12 @@ export function compile() {
       })
     )
     .pipe(twig())
-    .pipe(gulp.dest(pathBuilder(paths.public, paths.templates.public)));
+    .pipe(gulp.dest(pathBuilder(PATHS.public, PATHS.templates.public)));
 }
 
 export function inlineCss() {
   return gulp
-    .src(pathBuilder(paths.src, paths.templates.src, "**/*.html"))
+    .src(pathBuilder(PATHS.src, PATHS.templates.src, "**/*.html"))
     .pipe(
       inliner({
         applyLinkTags: true,
@@ -31,7 +30,7 @@ export function inlineCss() {
         removeHtmlSelectors: true,
       })
     )
-    .pipe(gulp.dest(paths.public, paths.templates.public));
+    .pipe(gulp.dest(PATHS.public, PATHS.templates.public));
 }
 
 export const templates = gulp.series(compile, inlineCss);
