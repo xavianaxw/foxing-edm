@@ -3,7 +3,7 @@ import sass from "gulp-sass";
 import cleancss from "gulp-clean-css";
 import stylelint from "gulp-stylelint";
 
-import paths from "../paths";
+import paths from "../config/paths";
 import pathBuilder from "../lib/path-builder";
 import { isProduction } from "../lib/helpers";
 

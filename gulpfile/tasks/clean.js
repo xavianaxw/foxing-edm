@@ -1,6 +1,6 @@
 import del from "del";
 
-import paths from "../paths";
+import paths from "../config/paths";
 import pathBuilder from "../lib/path-builder";
 
 export function clean() {

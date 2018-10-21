@@ -3,7 +3,7 @@ import inliner from "gulp-inline-css";
 import twig from "gulp-twig";
 import data from "gulp-data";
 
-import paths from "../paths";
+import paths from "../config/paths";
 import pathBuilder from "../lib/path-builder";
 
 export function compile() {
