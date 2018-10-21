@@ -4,7 +4,6 @@ import cleancss from "gulp-clean-css";
 import stylelint from "gulp-stylelint";
 
 import pathBuilder from "../lib/path-builder";
-import { isProduction } from "../lib/helpers";
 
 export function compile() {
   return gulp
@@ -17,13 +16,7 @@ export function compile() {
 export function linting() {
   return gulp
     .src(pathBuilder(PATHS.src, PATHS.stylesheets.src, "**/*.scss"))
-    .pipe(
-      stylelint({
-        failAfterError: isProduction,
-        reports: [{ formatter: "verbose", console: true }],
-        syntax: "scss",
-      })
-    );
+    .pipe(stylelint(TASKS.stylesheets.stylelint));
 }
 
 export const styles = gulp.series(linting, compile);
