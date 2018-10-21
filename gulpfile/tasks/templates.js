@@ -1,27 +1,14 @@
 import gulp from "gulp";
-import inject from "gulp-inject";
 import inliner from "gulp-inline-css";
 import twig from "gulp-twig";
 import data from "gulp-data";
 
-import { templates as templatePaths, styles as stylePaths } from "./paths";
-
-export function injectCss() {
-  return gulp
-    .src(templatePaths.src)
-    .pipe(
-      inject(
-        gulp.src(`${stylePaths.dest}/*.css`, {
-          read: false,
-        })
-      )
-    )
-    .pipe(gulp.dest(templatePaths.dest));
-}
+import paths from "../paths";
+import pathBuilder from "../lib/path-builder";
 
 export function compile() {
   return gulp
-    .src(templatePaths.src)
+    .src(pathBuilder(paths.src, paths.templates.src, "**/*.twig"))
     .pipe(
       data(() => {
         return {
@@ -30,12 +17,12 @@ export function compile() {
       })
     )
     .pipe(twig())
-    .pipe(gulp.dest(templatePaths.dest));
+    .pipe(gulp.dest(pathBuilder(paths.public, paths.templates.public)));
 }
 
 export function inlineCss() {
   return gulp
-    .src(`${templatePaths.dest}/*.html`)
+    .src(pathBuilder(paths.src, paths.templates.src, "**/*.html"))
     .pipe(
       inliner({
         applyLinkTags: true,
@@ -44,7 +31,7 @@ export function inlineCss() {
         removeHtmlSelectors: true,
       })
     )
-    .pipe(gulp.dest(templatePaths.dest));
+    .pipe(gulp.dest(paths.public, paths.templates.public));
 }
 
 export const templates = gulp.series(compile, inlineCss);
