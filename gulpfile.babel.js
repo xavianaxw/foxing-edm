@@ -1,7 +1,8 @@
 import { series } from "gulp";
 
 // Tasks
-import { clean } from "./tasks/clean";
+import { clean, afterBuildClean } from "./tasks/clean";
 import { styles } from "./tasks/styles";
+import { templates } from "./tasks/templates";
 
-export default series(clean, styles);
+export default series(clean, styles, templates, afterBuildClean);

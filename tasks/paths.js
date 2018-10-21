@@ -6,7 +6,7 @@ export const styles = {
   dest: `${DEST_ROOT}/stylesheets`,
 };
 
-export const html = {
-  src: `${ASSET_ROOT}/templates/**.*.html`,
+export const templates = {
+  src: `${ASSET_ROOT}/templates/**/*.twig`,
   dest: `${DEST_ROOT}`,
 };
