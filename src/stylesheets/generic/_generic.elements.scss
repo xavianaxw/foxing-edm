@@ -41,7 +41,7 @@ td {
   padding: 0; /* [2] */
 }
 
-div[style*="Margin: 16px 0"] {
+div[style*="margin: 16px 0"] {
   margin: 0 !important; /* [4] */
 }
 
@@ -57,12 +57,13 @@ p {
 /* [7] */
 .wrapper-inner {
   margin: 0 auto; /* [8] */
-  max-width: $max-wrapper-width;
+  max-width: $wrapper-max-width;
 }
 
 .container {
+  border: $wrapper-border-style;
   margin: 0 auto; /* [8] */
-  max-width: $max-wrapper-width;
+  max-width: $wrapper-max-width;
   width: 100%;
 }
 
@@ -85,5 +86,5 @@ p {
 }
 
 .hero img {
-  max-width: $max-wrapper-width;
+  max-width: $wrapper-max-width;
 }
