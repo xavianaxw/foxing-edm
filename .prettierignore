@@ -1,0 +1,5 @@
+node_modules
+public
+
+# Specific file(s)
+src/stylesheets/generic/_generic.client-specific.scss
