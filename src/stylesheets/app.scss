@@ -1,9 +1,20 @@
+// ==========================================================================||
+//	Settings
+// ==========================================================================||
+
 @import "settings/settings.colors";
+@import "settings/settings.variables";
 
-html {
-  background-color: $white;
-}
+// ==========================================================================||
+//	Generic
+// ==========================================================================||
 
-p {
-  color: $black;
-}
+@import "generic/generic.client-specific";
+@import "generic/generic.elements";
+
+// ==========================================================================||
+//	Utilities
+// ==========================================================================||
+
+@import "utilities/utilities.backgrounds";
+@import "utilities/utilities.alignments";

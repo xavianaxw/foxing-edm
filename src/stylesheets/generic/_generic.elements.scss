@@ -1,0 +1,89 @@
+// ==========================================================================||
+//	Reset - Do not edit unless you know what you're doing
+// ==========================================================================||
+//  [1] - fix alignment issue on Android KitKat
+//  [2] - Zeroing Margin/padding on body, table, table cells
+//  [3] - Zeroing any borders on linked image
+//  [4] - Relates to [1] to zero Margin on Android Kitkat
+//  [5] - Ensure content is centered in Yahoo Mail
+//  [6] - Prevent visual bg glitches in Outlook or Lotus Notes
+//  [7] - for earlier webkit version that only supports max-width on block elements
+//  [8] - centering in Yahoo Mail
+//  [9] - reset Margins on <p style="-webkit-text-size-adjust: 100%;-ms-text-size-adjust: 100%;Margin: 0;">
+//  [10] - Overwrite Outlook table behaviour
+//  [11] - Image always width: 100% / height: auto but overwritten by max-width
+// ==========================================================================||
+
+body {
+  background-color: $white; /* [6] */
+  margin: 0 !important; /* [1] */
+  padding: 0; /* [2] */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+img {
+  border: 0; /* [3] */
+  height: auto; /* [11] */
+  line-height: 100%;
+  outline: none;
+  text-decoration: none;
+  width: 100%; /* [11] */
+}
+
+table {
+  border: 0;
+  border-collapse: collapse; /* [10] */
+  border-spacing: 0; /* [2] */
+}
+
+td {
+  padding: 0; /* [2] */
+}
+
+div[style*="Margin: 16px 0"] {
+  margin: 0 !important; /* [4] */
+}
+
+p {
+  margin: 0; /* [9] */
+}
+
+.wrapper {
+  table-layout: fixed; /* [5] */
+  width: 100%;
+}
+
+/* [7] */
+.wrapper-inner {
+  margin: 0 auto; /* [8] */
+  max-width: $max-wrapper-width;
+}
+
+.container {
+  margin: 0 auto; /* [8] */
+  max-width: $max-wrapper-width;
+  width: 100%;
+}
+
+.content {
+  text-align: left;
+  width: 100%;
+}
+
+.content a:link, 
+.content a:visited, 
+.content a .yshortcuts /* Yahoo! Mail Override */ {
+  color: rgba($black, 0.75);
+  text-decoration: underline;
+}
+
+.content .btn:link,
+.content .btn:visited,
+.content .btn .yshortcuts {
+  text-decoration: none;
+}
+
+.hero img {
+  max-width: $max-wrapper-width;
+}
