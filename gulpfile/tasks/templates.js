@@ -2,6 +2,7 @@ import gulp from "gulp";
 import inliner from "gulp-inline-css";
 import twig from "gulp-twig";
 import data from "gulp-data";
+
 import fs from "fs";
 import path from "path";
 
@@ -50,4 +51,5 @@ export function inlineCss() {
     .pipe(gulp.dest(PATHS.public, PATHS.templates.public));
 }
 
-export const templates = gulp.series(compile, inlineCss);
+export const templates = gulp.series(compile);
+export const templatesInlined = gulp.series(compile, inlineCss);

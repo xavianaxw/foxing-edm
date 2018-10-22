@@ -4,15 +4,13 @@
 ===============================================================================
 */
 
-import { isProduction } from "../lib/helpers";
-
 export default {
   stylesheets: {
     sass: {
       includePaths: ["./node_modules"],
     },
     stylelint: {
-      failAfterError: isProduction,
+      failAfterError: true,
       reports: [{ formatter: "verbose", console: true }],
       syntax: "scss",
     },
