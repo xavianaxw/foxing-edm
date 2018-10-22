@@ -1,0 +1,26 @@
+{
+  "order": [
+    "at-rules",
+    "dollar-variables",
+    "custom-properties",
+    "declarations",
+    {
+      "type": "at-rule",
+      "name": "include",
+      "parameter": "mq",
+      "hasBlock": true
+    },
+    {
+      "type": "at-rule",
+      "name": "include",
+      "parameter": "breakpoint",
+      "hasBlock": true
+    },
+    {
+      "type": "at-rule",
+      "name": "media"
+    },
+    "rules"
+  ],
+  "properties-order": "alphabetical"
+}
