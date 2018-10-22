@@ -17,14 +17,7 @@ export function watchFiles() {
   );
   // Templates
   watch(
-    [
-      pathBuilder(PATHS.src, PATHS.templates.src, "**/*.twig"),
-      `!${pathBuilder(
-        PATHS.src,
-        PATHS.templates.src,
-        `**/{${TASKS.templates.excludeFolders.join(",")}}/**`
-      )}`,
-    ],
+    pathBuilder(PATHS.src, PATHS.templates.src, "**/*.twig"),
     series(templates, reload)
   );
 }
