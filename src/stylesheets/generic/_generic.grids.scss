@@ -1,0 +1,53 @@
+// ==========================================================================||
+//	Grids
+// ==========================================================================||
+//  [1] - If no column, set email padding as it is
+//  [2] - If no column, set inner column padding as 0
+//  Now if no of columns > 1 and we want a gutter width of 2px
+//  [3] - If no of columns > 1 - accommodate half of gutter width taken from
+//        email padding to content's inner padding
+//  [4] - Calculate max width of column | 600px - padding L/R / [no of columns]
+//  [5] - If no of columns > 1 - add remainder of gutter width as inner padding
+//  [6] - Set max width of image after | column width [4] - inner padding [2/5]
+//  [7] : Removes spacing between inline-blocks
+// ==========================================================================||
+
+.columns {
+  font-size: 0; /* [7] */
+  padding-left: $wrapper-padding-width; /* [1] */
+  padding-right: $wrapper-padding-width; /* [1] */
+  text-align: center;
+
+  .column {
+    display: inline-block; /* [7] */
+    max-width: $wrapper-max-width - ($wrapper-padding-width * 2); /* [4] */
+    vertical-align: top;
+    width: 100%;
+
+    .inner {
+      padding-left: 0; /* [2] */
+      padding-right: 0; /* [2] */
+    }
+
+    .image > img {
+      max-width: $wrapper-max-width - ($wrapper-padding-width * 2); /* [6] */
+    }
+  }
+}
+
+@each $col in $grid-columns {
+  .columns.columns--#{$col} {
+    padding-left: $wrapper-padding-width - ($grid-gutter-width / 2); /* [3] */
+    padding-right: $wrapper-padding-width - ($grid-gutter-width / 2); /* [3] */
+
+    .column {
+      max-width: ($wrapper-max-width - ($wrapper-padding-width * 2)) /
+        $col; /* [4] */
+
+      .inner {
+        padding-left: $grid-gutter-width / 2; /* [5] */
+        padding-right: $grid-gutter-width / 2; /* [5] */
+      }
+    }
+  }
+}

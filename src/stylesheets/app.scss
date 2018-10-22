@@ -11,6 +11,7 @@
 
 @import "generic/generic.client-specific";
 @import "generic/generic.elements";
+@import "generic/generic.grids";
 
 // ==========================================================================||
 //	Components
@@ -25,3 +26,7 @@
 @import "utilities/utilities.backgrounds";
 @import "utilities/utilities.alignments";
 @import "utilities/utilities.separator";
+
+p {
+  font-size: 16px;
+}
