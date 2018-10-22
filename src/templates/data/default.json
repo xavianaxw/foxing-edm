@@ -1,3 +1,4 @@
 {
-  "title": "Hello World"
+  "title": "Title of the email",
+  "previewText": "Insert some preview text"
 }
