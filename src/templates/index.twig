@@ -2,6 +2,18 @@
 
 {% block content %}
 
-  <p>hello world</p>
+  <!-- Start Grid of Two -->
+  {% embed "shared/partials/grid-of-two.twig" %}
+
+    {% block columnOne %}
+      <p>Hello World</p>
+    {% endblock %}
+
+    {% block columnTwo %}
+      <p>Hello World</p>
+    {% endblock %}
+
+  {% endembed %}
+  <!-- End Grid of Two -->
 
 {% endblock %}

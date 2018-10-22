@@ -1,0 +1,35 @@
+<tr>
+  <td class="columns columns--2">
+    <!--[if (gte mso 9)|(IE)]>
+    <table width="100%">
+    <tr>
+    <td width="50%" valign="top">
+    <![endif]-->
+    <div class="column  column-one">
+      <table width="100%">
+        <tr>
+          <td class="inner">
+            {% block columnOne %}{% endblock %}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--[if (gte mso 9)|(IE)]>
+    </td><td width="50%" valign="top">
+    <![endif]-->
+    <div class="column  column-two">
+      <table width="100%">
+        <tr>
+          <td class="inner">
+            {% block columnTwo %}{% endblock %}
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!--[if (gte mso 9)|(IE)]>
+    </td>
+    </tr>
+    </table>
+    <![endif]-->
+  </td>
+</tr>
