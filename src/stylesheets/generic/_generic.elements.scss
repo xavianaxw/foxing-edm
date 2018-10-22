@@ -56,12 +56,12 @@ p {
 
 /* [7] */
 .wrapper-inner {
+  border: $wrapper-border-style;
   margin: 0 auto; /* [8] */
   max-width: $wrapper-max-width;
 }
 
 .container {
-  border: $wrapper-border-style;
   margin: 0 auto; /* [8] */
   max-width: $wrapper-max-width;
   width: 100%;
@@ -85,6 +85,6 @@ p {
   text-decoration: none;
 }
 
-.hero img {
+.full-bleed-image img {
   max-width: $wrapper-max-width;
 }
