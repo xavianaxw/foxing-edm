@@ -11,6 +11,25 @@
   <link rel="stylesheet" href="stylesheets/app.css"/>
 </head>
 <body>
-  {% block content %}{% endblock %}
+  <div id="preview_text" style="display:none;font-size:1px;color:#000000;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;">{{ previewText }}</div>
+
+  <center class="wrapper  u-bg-white">
+    {# for earlier webkit version that only supports max-width on block elements #}
+    <div class="wrapper-inner">
+      <!--[if (gte mso 9)|(IE)]>
+      <table width="600" align="center">
+      <tr>
+      <td>
+      <![endif]-->
+      <table class="container" align="center">
+        {% block content %}{% endblock %}
+      </table>
+      <!--[if (gte mso 9)|(IE)]>
+      </td>
+      </tr>
+      </table>
+      <![endif]-->
+    </div>
+  </center>
 </body>
 </html>
