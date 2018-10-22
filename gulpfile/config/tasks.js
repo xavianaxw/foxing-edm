@@ -11,7 +11,6 @@ export default {
     sass: {
       includePaths: ["./node_modules"],
     },
-    extensions: ["sass", "scss", "css"],
     stylelint: {
       failAfterError: isProduction,
       reports: [{ formatter: "verbose", console: true }],
@@ -21,7 +20,6 @@ export default {
 
   templates: {
     excludeFolders: ["layouts", "shared", "data"],
-    extensions: ["html", "twig", "json"],
     inliner: {
       applyLinkTags: true,
       applyTableAttributes: true,

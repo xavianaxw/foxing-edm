@@ -2,9 +2,30 @@ import gulp from "gulp";
 import inliner from "gulp-inline-css";
 import twig from "gulp-twig";
 import data from "gulp-data";
+import fs from "fs";
+import path from "path";
 
 import pathBuilder from "../lib/path-builder";
-import { fetchData } from "../lib/helpers";
+
+function importData(file) {
+  const dataFile = pathBuilder(
+    PATHS.src,
+    PATHS.templates.src,
+    "data",
+    `${path.basename(file.basename, ".twig")}.json`
+  );
+
+  if (fs.existsSync(dataFile)) {
+    return JSON.parse(fs.readFileSync(dataFile, "utf8"));
+  } else {
+    return JSON.parse(
+      fs.readFileSync(
+        pathBuilder(PATHS.src, PATHS.templates.src, "data", "default.json"),
+        "utf8"
+      )
+    );
+  }
+}
 
 export function compile() {
   const exclude =
@@ -16,15 +37,8 @@ export function compile() {
     );
 
   return gulp
-    .src([
-      pathBuilder(
-        PATHS.src,
-        PATHS.templates.src,
-        `**/*.{${TASKS.templates.extensions}}`
-      ),
-      exclude,
-    ])
-    .pipe(data(fetchData))
+    .src([pathBuilder(PATHS.src, PATHS.templates.src, "**/*.twig"), exclude])
+    .pipe(data(importData))
     .pipe(twig())
     .pipe(gulp.dest(pathBuilder(PATHS.public, PATHS.templates.public)));
 }
