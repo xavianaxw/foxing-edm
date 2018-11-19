@@ -40,7 +40,11 @@ export function compile() {
   return gulp
     .src([pathBuilder(PATHS.src, PATHS.templates.src, "**/*.twig"), exclude])
     .pipe(data(importData))
-    .pipe(twig())
+    .pipe(
+      twig({
+        base: pathBuilder(PATHS.src, PATHS.templates.src),
+      })
+    )
     .pipe(gulp.dest(pathBuilder(PATHS.public, PATHS.templates.public)));
 }
 
