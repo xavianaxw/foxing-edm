@@ -1,0 +1,55 @@
+// $sp-alfa: 8px;
+$sp-bravo: 16px;
+$sp-charlie: 24px;
+$sp-delta: 32px;
+$sp-echo: 40px;
+$sp-foxtrot: 48px;
+$sp-golf: 56px;
+$sp-hotel: 64px;
+$sp-india: 72px;
+$sp-juliett: 80px;
+$sp-kilo: 88px;
+$sp-lima: 96px;
+$sp-mike: 104px;
+$sp-november: 112px;
+$sp-oscar: 120px;
+$sp-papa: 128px;
+$sp-quebec: 136px;
+$sp-romeo: 144px;
+$sp-sierra: 152px;
+$sp-tango: 160px;
+$sp-uniform: 168px;
+$sp-victor: 176px;
+$sp-whiskey: 184px;
+$sp-xray: 192px;
+$sp-yankee: 200px;
+$sp-zulu: 208px;
+
+$spacings: (
+  "none": 0,
+  "bravo": $sp-bravo,
+  "charlie": $sp-charlie,
+  "delta": $sp-delta,
+  "echo": $sp-echo,
+  "foxtrot": $sp-foxtrot,
+  "golf": $sp-golf,
+  "hotel": $sp-hotel,
+  "india": $sp-india,
+  "juliett": $sp-juliett,
+  "kilo": $sp-kilo,
+  "lima": $sp-lima,
+  "mike": $sp-mike,
+  "november": $sp-november,
+  "oscar": $sp-oscar,
+  "papa": $sp-papa,
+  "quebec": $sp-quebec,
+  "romeo": $sp-romeo,
+  "sierra": $sp-sierra,
+  "tango": $sp-tango,
+  "uniform": $sp-uniform,
+  "victor": $sp-victor,
+  "whiskey": $sp-whiskey,
+  "xray": $sp-xray,
+  "yankee": $sp-yankee,
+  "zulu": $sp-zulu,
+);

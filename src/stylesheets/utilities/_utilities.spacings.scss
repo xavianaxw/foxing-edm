@@ -1,0 +1,19 @@
+// ==========================================================================||
+//	Spacers
+//  - Utility classes to create spacing for reusability
+// ==========================================================================||
+
+@each $spacing-namespace, $spacing in $spacings {
+  .u-sp--#{$spacing-namespace} {
+    padding-bottom: $spacing;
+    padding-top: $spacing;
+  }
+
+  .u-sp-btm--#{$spacing-namespace} {
+    padding-bottom: $spacing;
+  }
+
+  .u-sp-top--#{$spacing-namespace} {
+    padding-top: $spacing;
+  }
+}
