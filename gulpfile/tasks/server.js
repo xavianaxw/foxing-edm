@@ -30,7 +30,7 @@ export function reload(cb) {
 export function serve(cb) {
   server.init({
     server: {
-      baseDir: "./public",
+      baseDir: PATHS.public,
     },
   });
   cb();
