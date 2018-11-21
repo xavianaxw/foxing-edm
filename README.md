@@ -39,13 +39,13 @@ Which will create a public folder with your HTML template(s) that have already b
 
 Making use of Twig's ability to embed partials within a layout. This build tool provides a list of partial that can empower your development work for your EDM template. Here are a few that the tool includes out of the box.
 
-1. Full bleed image
+**Full bleed image**
 
 A good use case for a full bleeed image can be depicted in this Blizzard EDM on the release of a new hero, Ashe.
 
 ![Blizzard's use of a Full Bleed Image](docs/images/introducing-ashe.png)
 
-Here's how you can embed the partial into your template.
+Here's how you can achieve the same design with the partial
 
 ```
 {% include 'shared/partials/full-bleed-image.twig' with {
@@ -59,6 +59,36 @@ Here's how you can embed the partial into your template.
 ![Blizzard's use of a Full Bleed Image](docs/images/full-bleed-image-example.png)
 
 Walaa!
+
+**Grid of One**
+
+Next up, a single column content. Back to our earlier example, this partial would mainly be used for content that is of a single column. Like so.
+
+![Single Column Content](docs/images/blizzard-one-column-content.png)
+
+Here's how you can achieve the same design with the partial
+
+```
+{% embed "shared/partials/grid-of-one.twig" %}
+
+  {% block columnOne %}
+    <p>
+      Who says there's no honor among thieves? The rebellious gunslinger and infamous leader of the Deadlock Gang would like a word. The 29th hero of Overwatch, Ashe, is here and ready to call the shots.
+    </p>
+    <p>
+      Shoot from the hip or aim down your sights for maximum damage, light up the enemy with a well-placed bit of dynamite, blast yourself to safety with your coach gun, and call in some backup from Bob as new damage hero Ashe.
+    </p>
+    <p>
+      Get in there, get the blood pumping, and burn it all down.
+    </p>
+  {% endblock %}
+
+{% endembed %}
+```
+
+![Single Column Content](docs/images/one-column-content-example.png)
+
+Too easy!
 
 ## Deployment to Production environment
 
