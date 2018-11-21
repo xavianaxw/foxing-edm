@@ -75,7 +75,7 @@ p {
 .content a:link, 
 .content a:visited, 
 .content a .yshortcuts /* Yahoo! Mail Override */ {
-  color: rgba($black, 0.75);
+  color: $honest-fox;
   text-decoration: underline;
 }
 
