@@ -11,4 +11,9 @@ export default {
     src: "stylesheets",
     public: "stylesheets",
   },
+
+  images: {
+    src: "images",
+    public: "./images",
+  },
 };

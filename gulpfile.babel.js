@@ -1,8 +1,9 @@
-import { watch, series } from "gulp";
+import { series } from "gulp";
 
 // Tasks
 import { clean, afterBuildClean } from "./gulpfile/tasks/clean";
 import { styles } from "./gulpfile/tasks/styles";
+import { images } from "./gulpfile/tasks/images";
 import { templates, templatesInlined } from "./gulpfile/tasks/templates";
 import { serve, watchFiles } from "./gulpfile/tasks/server";
 
@@ -19,6 +20,7 @@ global.TASKS = tasks;
 export default series(
   clean,
   styles,
+  images,
   templates,
   afterBuildClean,
   serve,
@@ -26,4 +28,10 @@ export default series(
 );
 
 // gulp build
-export const build = series(clean, styles, templatesInlined, afterBuildClean);
+export const build = series(
+  clean,
+  styles,
+  images,
+  templatesInlined,
+  afterBuildClean
+);
