@@ -2,18 +2,27 @@
 
 {% block content %}
 
-  <!-- Start Grid of Two -->
-  {% embed "shared/partials/grid-of-two.twig" %}
+  {% include 'shared/partials/full-bleed-image.twig' with { 
+    image: {
+      src: 'images/placeholder.jpg',
+      alt: 'Placeholder Image'
+    }
+  } %}
+
+  {% embed "shared/partials/grid-of-one.twig" %}
 
     {% block columnOne %}
-      <p>Hello World</p>
-    {% endblock %}
-
-    {% block columnTwo %}
-      <p>Hello World</p>
+      <p>
+        Who says there's no honor among thieves? The rebellious gunslinger and infamous leader of the Deadlock Gang would like a word. The 29th hero of Overwatch, Ashe, is here and ready to call the shots.
+      </p>
+      <p>
+        Shoot from the hip or aim down your sights for maximum damage, light up the enemy with a well-placed bit of dynamite, blast yourself to safety with your coach gun, and call in some backup from Bob as new damage hero Ashe.
+      </p>
+      <p>
+        Get in there, get the blood pumping, and burn it all down.
+      </p>
     {% endblock %}
 
   {% endembed %}
-  <!-- End Grid of Two -->
 
 {% endblock %}
