@@ -1,11 +1,35 @@
-<tr>
-  <td class="columns columns--2">
+{#
+===============================================================================
+  Partial: Grid of Two's
+  - Create a two column grid
+
+  Accepts:
+  - border  | Toggle separator | top | bottom | both | none
+  - classes | Additional classes for spacing etc
+  
+  Usage:
+  {% embed "shared/partials/grid-of-two.twig" %}
+
+    {% block columnOne %}
+      <p>Hello World</p>
+    {% endblock %}
+
+    {% block columnTwo %}
+      <p>Hello World</p>
+    {% endblock %}
+
+  {% endembed %}
+===============================================================================
+#}
+
+<tr {% if border is defined and border != 'none' %} class="u-separator-{{ border }}" {% endif %}>
+  <td class="columns columns--2  {% if classes is defined %}{{ classes }}{% endif %}">
     <!--[if (gte mso 9)|(IE)]>
     <table width="100%">
     <tr>
     <td width="50%" valign="top">
     <![endif]-->
-    <div class="column  column-one">
+    <div class="column  column-one  u-sp-btm--bravo">
       <table width="100%">
         <tr>
           <td class="inner">

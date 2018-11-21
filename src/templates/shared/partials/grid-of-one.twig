@@ -1,0 +1,34 @@
+{#
+===============================================================================
+  Partial: Grid of One
+  - Create a one column grid
+
+  Accepts:
+  - border  | Toggle separator | top | bottom | both | none
+  - classes | Additional classes for spacing etc
+  - align   | Alignment of content | left, center (default) and right
+  
+  Usage:
+  {% embed "shared/partials/grid-of-one.twig" %}
+
+    {% block columnOne %}
+      <p>Hello World</p>
+    {% endblock %}
+
+  {% endembed %}
+===============================================================================
+#}
+
+<tr {% if border is defined and border != 'none' %} class="u-separator-{{ border }}" {% endif %}>
+  <td class="columns  {% if classes is defined %}{{ classes }}{% endif %}">
+    <div class="column">
+      <table width="100%">
+        <tr>
+          <td class="inner  content  u-text-{{ align | default('center') }}">
+            {% block columnOne %}{% endblock %}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </td>
+</tr>

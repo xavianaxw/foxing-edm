@@ -1,0 +1,21 @@
+{#
+===============================================================================
+  Full Bleed Image
+  - Insert a image that is full bleed
+
+  Accepts:
+  - image
+    - src
+    - alt
+  - classes | Additional classes for spacing etc
+
+  Usage:
+  {% include 'full-bleed-image.twig' with [params] %}
+===============================================================================
+#}
+
+<tr>
+  <td class="full-bleed-image  {% if classes is defined %}{{ classes }}{% endif %}">
+    <img src="{{ image.src }}" alt="{{ image.alt }}"/>
+  </td>
+</tr>
