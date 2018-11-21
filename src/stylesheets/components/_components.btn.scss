@@ -1,0 +1,46 @@
+.btn {
+  background-color: transparent;
+  border-radius: 0;
+  display: inline-block; /* [!] */
+  font-family: Arial;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 20px;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+
+  &,
+  .content &,
+  .content &:link,
+  .content &:visited,
+  .content & .yshortcuts {
+    color: $black;
+    text-decoration: none;
+  }
+}
+
+.btn--primary {
+  background-color: $meteor;
+
+  &,
+  .content &,
+  .content &:link,
+  .content &:visited,
+  .content & .yshortcuts {
+    color: $white;
+  }
+}
+
+.btn--icon {
+  height: 32px;
+  margin: 0 8px;
+  padding: 0;
+  width: 32px;
+
+  > img {
+    height: 100%;
+    width: 100%;
+  }
+}
